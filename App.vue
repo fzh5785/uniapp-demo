@@ -1,4 +1,5 @@
 <script>
+	import utils from './utils/utils.js'
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
@@ -8,6 +9,9 @@
 		},
 		onHide: function() {
 			console.log('App Hide')
+		},
+		globalData: {
+			utils 
 		}
 	}
 </script>
