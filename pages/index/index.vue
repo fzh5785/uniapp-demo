@@ -4,23 +4,26 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+		<view v-for="(item,index) in list" :key="index">{{item}}</view>
+		<button @click="add">+1</button>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
+<script setup>
+	import {ref} from 'vue'
+	import { onReady,onLoad } from '@dcloudio/uni-app'
+	const title = ref(0)
+	const list = ref(['a','b','c'])
+	onReady(() => {
+	  console.log(title.value)
+	})
+	onLoad(() => {
+	  console.log(list.value)
+	})
+	const add  = ()=> {
+		title.value++
 	}
+
 </script>
 
 <style>
