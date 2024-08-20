@@ -1,29 +1,13 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
-		<view v-for="(item,index) in list" :key="index">{{item}}</view>
-		<button @click="add">+1</button>
+		<navBar title='首页'/>
 	</view>
 </template>
 
 <script setup>
 	import {ref} from 'vue'
 	import { onReady,onLoad } from '@dcloudio/uni-app'
-	const title = ref(0)
-	const list = ref(['a','b','c','d'])
-	onReady(() => {
-	  console.log(title.value)
-	})
-	onLoad(() => {
-	  console.log(list.value)
-	})
-	const add  = ()=> {
-		title.value++
-	}
-
+	import navBar from '../../components/navBar.vue'
 </script>
 
 <style>
@@ -48,8 +32,4 @@
 		justify-content: center;
 	}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 </style>

@@ -1,0 +1,1 @@
+<view class="nav"><view style="{{a}}"></view><view class="navbar" style="{{h}}"><view wx:if="{{true}}" class="back-icon" bindtap="{{e}}"><image wx:if="{{b}}" src="{{c}}"></image><image wx:else src="{{d}}"></image></view><view wx:if="{{f}}" style="font-weight:bold">{{g}}</view><view style="width:44rpx"></view></view></view>
