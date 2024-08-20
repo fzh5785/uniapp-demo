@@ -13,7 +13,7 @@
 	import {ref} from 'vue'
 	import { onReady,onLoad } from '@dcloudio/uni-app'
 	const title = ref(0)
-	const list = ref(['a','b','c'])
+	const list = ref(['a','b','c','d'])
 	onReady(() => {
 	  console.log(title.value)
 	})
