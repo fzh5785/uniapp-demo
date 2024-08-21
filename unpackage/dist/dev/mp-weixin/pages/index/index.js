@@ -20,12 +20,32 @@ const _sfc_main = {
         aid: 1
       },
       success: ({ data }) => {
-        var _a;
+        var _a, _b, _c;
         console.log(data);
         swiperList.value = (_a = data == null ? void 0 : data.data) == null ? void 0 : _a.slides;
-        console.log(swiperList.value);
+        navList.value = (_b = data == null ? void 0 : data.data) == null ? void 0 : _b.nav2s;
+        navList2.value = (_c = data == null ? void 0 : data.data) == null ? void 0 : _c.navs;
       }
     });
+    const navList = common_vendor.ref([]);
+    const handlerNavList = (e) => {
+      const nav = common_vendor.toRaw(navList.value)[e.currentTarget.id];
+      if (nav.stype === "1") {
+        common_vendor.index.navigateTo({
+          url: nav == null ? void 0 : nav.stype_link
+        });
+      }
+    };
+    const navList2 = common_vendor.ref([]);
+    const handlerNavList2 = (e) => {
+      const nav = common_vendor.toRaw(navList2.value)[e.currentTarget.id];
+      console.log(nav);
+      if (nav.stype === "1") {
+        common_vendor.index.navigateTo({
+          url: nav == null ? void 0 : nav.stype_link
+        });
+      }
+    };
     common_vendor.onLoad(() => {
       app.globalData.utils.getUserInfo();
       getSwiperData();
@@ -45,6 +65,23 @@ const _sfc_main = {
           return {
             a: item.pic_image_url,
             b: index
+          };
+        }),
+        d: common_vendor.f(navList.value, (item, index, i0) => {
+          return {
+            a: item.pic_image_url,
+            b: common_vendor.o(handlerNavList, index),
+            c: index,
+            d: index
+          };
+        }),
+        e: common_vendor.f(navList2.value, (item, index, i0) => {
+          return {
+            a: item.pic_image_url,
+            b: common_vendor.t(item.title),
+            c: index,
+            d: common_vendor.o(handlerNavList2, index),
+            e: index
           };
         })
       };
